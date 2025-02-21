@@ -3,29 +3,77 @@ document.addEventListener('DOMContentLoaded', function(){
     const botaoEnviar = document.getElementById('btnenviar');
 
     botaoEnviar.addEventListener('click', function(event){
-        const nome = document.querySelector('.containerNome input:nth-of-type(1)').value;
-        const sobrenome = document.querySelector('.containerNome input:nth-of-type(2)').value;
+        event.preventDefault();
+
+        const inputsNome = document.querySelectorAll('.containerNome input');
+        const nome = inputsNome[0].value;
+        const sobrenome = inputsNome[1].value;
+        
         const email = document.querySelector('.containerEmail input').value;
-        const mensagem = document.querySelector('.containerMensagem input').value;
+        const mensagem = document.getElementById('inputMensagem').value;
         const contato = document.getElementById('equipeContato').checked;
         const consultaSelecionada = document.querySelector('input[name="tipoConsulta"]:checked');
 
+        let temErro = false;
 
-        if(!nome || !sobrenome || !email || !mensagem || !consultaSelecionada){
-            alert('Por favor, preencha todos os campos obrigatórios.')
+        function mostrarErro(id, mensagem){
+            document.getElementById(id).textContent = mensagem;
+        }
+
+        function limparErro(id){
+            document.getElementById(id).textContent = '';
+        }
+
+        if(!nome){
+            mostrarErro('erroNome', 'Por favor, preencha seu nome.')
+            temErro = true;
+        } else {
+            limparErro('erroNome');
+        };
+
+        if(!sobrenome){
+            mostrarErro('erroSobrenome', 'Por favor, preencha seu sobrenome.')
+            temErro = true;
+        } else {
+            limparErro('erroSobrenome');
+        };
+
+        if(!email){
+            mostrarErro('erroEmail', 'Por favor, preencha seu email.')
+            temErro = true;
+        } else {
+            limparErro('erroEmail');
+        };
+
+        if(!mensagem){
+            mostrarErro('erroMensagem', 'Por favor, escreva sua mensagem.')
+            temErro = true;
+        } else {
+            limparErro('erroMensagem');
+        };
+
+        if(!consultaSelecionada){
+            mostrarErro('erroConsulta', 'Selecione um tipo de consulta.')
+            temErro = true;
+        } else {
+            limparErro('erroConsulta');
+        };
+
+        if(!contato){
+            mostrarErro('erroContato', 'Para enviar este formulário, por favor, consinta em ser contatado.')
+            temErro = true;
+        } else {
+            limparErro('erroContato');
+        };
+
+        if(temErro){
             return;
         }
 
+
         const tipoConsulta = consultaSelecionada.nextSibling.textContent.trim()
 
-        const dadosFormulario = {
-            nome,
-            sobrenome,
-            email,
-            tipoConsulta,
-            mensagem,
-            contato
-        };
+        console.log(tipoConsulta)
 
         const destinatario = "wadexah317@lxheir.com"; //enderço de email descartavel
         const assunto = encodeURIComponent("Novo Contato do Formulário");
@@ -35,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
         window.location.href = `mailto:${destinatario}?subject=${assunto}&body=${corpo}`
 
-        console.log("Dados enviados:", dadosFormulario);
         alert("Formulário enviado com sucesso! Aguarde o contato");
     });
 });

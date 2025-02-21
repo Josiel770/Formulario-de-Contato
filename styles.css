@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: "Karla", serif;
+    color: #164309;
 }
 
 main {
@@ -14,15 +15,93 @@ main {
     background: #e4f3e4 ;
 }
 
+h1{
+    color: #164309;
+    margin-bottom: 20px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: first baseline;
     height: 80%;
-    width: 60%;
+    width: 40vw;
     padding: 40px;
-    gap: 22px;
+    gap: 42px;
     background: #ffff;
     border-radius: 25px;
 
+}
+
+.erro {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 4px;
+    display: block;
+}
+
+.containerNome{
+    display: flex;
+    width: 100%;
+}
+
+.inputNome{
+    height: 35px;
+    width: 90%;
+    margin-right: 35px;
+    font-size: 20px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: solid 1px #0c7d69;
+}
+
+.containerEmail{
+    display: flex;
+    width: 100%;
+}
+
+.inputEmail{
+    height: 35px;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: solid 1px #0c7d69;
+}
+
+.containerConsulta{
+    display: flex;
+}
+
+.consultaInput{
+    cursor: pointer;
+    
+}
+
+#inputMensagem{
+    height: 85px;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: solid 1px #0c7d69;
+}
+
+button{
+    cursor: pointer;
+    height: 85px;
+    width: 70%;
+    color: #ffff;
+    background-color: #0c7d69;
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+button:active{
+    opacity: 0.6;
 }
