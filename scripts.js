@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function(){
             contato
         };
 
-        const destinatario = "wadexah317@lxheir.com";
+        const destinatario = "wadexah317@lxheir.com"; //enderço de email descartavel
         const assunto = encodeURIComponent("Novo Contato do Formulário");
         const corpo = encodeURIComponent(
-            `nome: ${nome} ${sobrenome}\nEmail: ${email}\nTipo de consulta: ${tipoConsulta}\nMensagem: ${mensagem}`
+            `Nome: ${nome} ${sobrenome}\nEmail: ${email}\nTipo de consulta: ${tipoConsulta}\nMensagem: ${mensagem}`
         );
 
         window.location.href = `mailto:${destinatario}?subject=${assunto}&body=${corpo}`
