@@ -39,13 +39,17 @@
             </div>
 
             <div class="containerConsulta">
-                <label>Tipo de consulta *
-                    <label for=""> <input class="consultaInput" type="radio" id="escolhaUm" name="tipoConsulta">
-                        Consulta geral </label>
-                    <label for=""><input class="consultaInput" type="radio" id="escolhaDois"
-                            name="tipoConsulta">Solicitação de Suporte</label>
-                    <span class="erro" id="erroConsulta"></span>
-                </label>
+                <label>Tipo de consulta *</label>
+                <div class="consultaOpcoes">
+                    <label for=""> <button class="btnConsulta"><input class="consultaInput" type="radio" id="escolhaUm"
+                                name="tipoConsulta">
+                            Consulta geral </button></label>
+
+                    <label for=""> <button class="btnConsulta"><input class="consultaInput" type="radio"
+                                id="escolhaDois" name="tipoConsulta">Solicitação de Suporte </button></label>
+                </div>
+                <span class="erro" id="erroConsulta"></span>
+
 
 
             </div>
@@ -54,11 +58,13 @@
                 <textarea type="text" name="" id="inputMensagem"></textarea>
                 <span class="erro" id="erroMensagem"></span>
             </div>
-            <label for="">
-                <input type="checkbox" id="equipeContato">
-                Eu concordo em ser contatado pela equipe
-                <span class="erro" id="erroContato"></span>
-            </label>
+            <div class="labelMensagem">
+                <label for="">
+                    <input type="checkbox" id="equipeContato">
+                    Eu concordo em ser contatado pela equipe
+                    <span class="erro" id="erroContato"></span>
+                </label>
+            </div>
 
             <button type="submit" id="btnenviar">Enviar</button>
         </div>

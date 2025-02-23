@@ -18,16 +18,18 @@ main {
 h1{
     color: #164309;
     margin-bottom: 20px;
+    font-size: 50px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: first baseline;
+    justify-content: center;
+    align-items: center;
     height: 80%;
     width: 40vw;
     padding: 40px;
-    gap: 42px;
+    gap: 25px;
     background: #ffff;
     border-radius: 25px;
 
@@ -43,11 +45,13 @@ h1{
 .containerNome{
     display: flex;
     width: 100%;
+    gap: 10px;
+
 }
 
 .inputNome{
-    height: 35px;
-    width: 90%;
+    height: 45px;
+    width: 100%;
     margin-right: 35px;
     font-size: 20px;
     padding-left: 10px;
@@ -56,12 +60,12 @@ h1{
 }
 
 .containerEmail{
-    display: flex;
+    display: grid;
     width: 100%;
 }
 
 .inputEmail{
-    height: 35px;
+    height: 45px;
     width: 100%;
     font-size: 20px;
     padding-left: 10px;
@@ -71,13 +75,46 @@ h1{
 
 .containerConsulta{
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.consultaOpcoes{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.consultaOpcoes label {
+    width: 100%;
+}
+
+.btnConsulta{
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff;
+    font-size: 18px;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid #0c7d69;
+
 }
 
 .consultaInput{
     cursor: pointer;
+    border-style: dashed;
     
 }
 
+.containerMensagem{
+    display: grid;
+    width: 100%;
+    gap: 10px;
+}
 #inputMensagem{
     height: 85px;
     width: 100%;
@@ -87,7 +124,7 @@ h1{
     border: solid 1px #0c7d69;
 }
 
-button{
+#btnenviar{
     cursor: pointer;
     height: 85px;
     width: 70%;
@@ -98,10 +135,16 @@ button{
     border: none;
 }
 
-button:hover{
+#btnenviar:hover{
     opacity: 0.8;
 }
 
-button:active{
+#btnenviar:active{
     opacity: 0.6;
 }
+
+.labelMensagem{
+    display: grid;
+    width: 100%;
+}
+
