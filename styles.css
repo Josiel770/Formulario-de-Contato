@@ -26,7 +26,7 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 90%;
     width: 40vw;
     padding: 40px;
     gap: 25px;
@@ -99,7 +99,7 @@ h1{
     background-color: #ffff;
     font-size: 18px;
     gap: 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid #0c7d69;
 
 }
@@ -126,12 +126,12 @@ h1{
 
 #btnenviar{
     cursor: pointer;
-    height: 85px;
-    width: 70%;
+    height: 65px;
+    width: 100%;
     color: #ffff;
     background-color: #0c7d69;
     font-size: 20px;
-    border-radius: 15px;
+    border-radius: 5px;
     border: none;
 }
 
@@ -148,3 +148,47 @@ h1{
     width: 100%;
 }
 
+
+
+@media (max-width: 1024px) {
+    .container {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 80vw;
+        padding: 30px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .inputNome, .inputEmail, #inputMensagem {
+        font-size: 18px;
+    }
+    #btnenviar {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 90vw;
+        padding: 5px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .containerNome {
+        flex-direction: column;
+    }
+    .inputNome {
+        margin-right: 0;
+    }
+    #btnenviar {
+        width: 70%;
+        height: 45px;
+        font-size: 18px;
+    }
+}
